@@ -23,16 +23,16 @@ echo pip install git+git/github.com/bnl-sdcc/panda-harvester  --upgrade
 pip install git+git://github.com/bnl-sdcc/panda-harvester  --upgrade
 sleep 2
 
-echo cp ~/etc/jrh-panda_harvester.init etc/rc.d/init.d/panda_harvester
-cp ~/etc/jrh-panda_harvester.init etc/rc.d/init.d/panda_harvester
-echo cp ~/etc/jrh-panda_common.cfg etc/panda/panda_common.cfg
-cp ~/etc/jrh-panda_common.cfg etc/panda/panda_common.cfg
-echo cp ~/etc/jrh-panda_harvester etc/sysconfig/panda_harvester
-cp ~/etc/jrh-panda_harvester etc/sysconfig/panda_harvester
-echo cp ~/etc/jrh-panda_harvester.cfg  etc/panda/panda_harvester.cfg
-cp ~/etc/jrh-panda_harvester.cfg  etc/panda/panda_harvester.cfg
-echo cp ~/etc/jrh-panda_queueconfig.json etc/panda/panda_queueconfig.json
-cp ~/etc/jrh-panda_queueconfig.json etc/panda/panda_queueconfig.json
+echo cp ~/git/autopyfactory-harvester/configs/jrh-panda_harvester.init etc/rc.d/init.d/panda_harvester
+cp ~/git/autopyfactory-harvester/configs/jrh-panda_harvester.init etc/rc.d/init.d/panda_harvester
+echo cp ~/git/autopyfactory-harvester/configs/jrh-panda_common.cfg etc/panda/panda_common.cfg
+cp ~/git/autopyfactory-harvester/configs/jrh-panda_common.cfg etc/panda/panda_common.cfg
+echo cp ~/git/autopyfactory-harvester/configs/jrh-panda_harvester etc/sysconfig/panda_harvester
+cp ~/git/autopyfactory-harvester/configs/jrh-panda_harvester etc/sysconfig/panda_harvester
+echo cp~/git/autopyfactory-harvester/configs/jrh-panda_harvester.cfg  etc/panda/panda_harvester.cfg
+cp ~/git/autopyfactory-harvester/configs/jrh-panda_harvester.cfg  etc/panda/panda_harvester.cfg
+echo cp ~/git/autopyfactory-harvester/configs/jrh-panda_queueconfig.json etc/panda/panda_queueconfig.json
+cp ~/git/autopyfactory-harvester/configs/jrh-panda_queueconfig.json etc/panda/panda_queueconfig.json
 
 chmod +x etc/rc.d/init.d/panda_harvester
 mkdir -p log  
