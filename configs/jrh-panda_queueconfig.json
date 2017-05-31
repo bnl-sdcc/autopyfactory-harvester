@@ -4,7 +4,7 @@
         "nQueueLimitJob": 3,
         "nQueueLimitWorker": 5,
         "maxWorkers": 5,
-        "mapType": "OneToOne",
+        "mapType": "NoJob",
         "useJobLateBinding": true,	
         "preparator": {
                 "name": "DummyPreparator",
