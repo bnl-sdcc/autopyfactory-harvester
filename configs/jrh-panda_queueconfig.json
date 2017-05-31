@@ -23,7 +23,7 @@
         "messenger": {
                 "name": "SharedFileMessenger",
                 "module": "pandaharvester.harvestermessenger.shared_file_messenger",
-                "accessPoint": "/home/dcameron/dev/panda/panda-harvester/harvester/${workerID}"
+                "accessPoint": "/home/jhover/harvester/var/harvester/${workerID}"
         },
         "stager": {
                 "name": "DummyStager",
