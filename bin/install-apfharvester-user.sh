@@ -34,6 +34,9 @@ cp ~/git/autopyfactory-harvester/configs/jrh-panda_harvester.cfg  etc/panda/pand
 echo cp ~/git/autopyfactory-harvester/configs/jrh-panda_queueconfig.json etc/panda/panda_queueconfig.json
 cp ~/git/autopyfactory-harvester/configs/jrh-panda_queueconfig.json etc/panda/panda_queueconfig.json
 
+echo cp ~/git/autopyfactory-harvester/configs/jrh-agisdefaults.conf etc/autopyfactory/agisdefaults.conf
+echo cp ~/git/autopyfactory-harvester/configs/jrh-agisdefaults.conf etc/autopyfactory/agisdefaults.conf
+
 chmod +x etc/rc.d/init.d/panda_harvester
 mkdir -p log  
 mkdir -p var/log/panda/
