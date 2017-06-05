@@ -25,7 +25,7 @@ cp ~/git/autopyfactory-harvester/configs/jrh-condor_config.local $CLOCAL
 condor_config_val -config
 condor_master
 
-cd -
+cd ~/harvester
 
 # Install Harvester
 echo pip install pip --upgrade
