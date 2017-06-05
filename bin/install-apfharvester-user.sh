@@ -2,6 +2,7 @@
 #
 # on RHEL7
 #
+cd ~/
 echo virtualenv harvester
 virtualenv harvester
 
