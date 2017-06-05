@@ -1,7 +1,12 @@
 #!/bin/bash
 #
+# Fast and dirty
+# APF Grid Harvester setup
 # on RHEL7
 #
+# John Hover <jhover@bnl.gov>
+#
+
 cd ~/
 echo virtualenv harvester
 virtualenv harvester
@@ -18,15 +23,15 @@ wget http://dev.racf.bnl.gov/dist/condor/condor-8.6.3-x86_64_RedHat7-stripped.ta
 tar -xvzf condor-8.6.3-x86_64_RedHat7-stripped.tar.gz
 cd condor-8.6.3-x86_64_RedHat7-stripped
 ./condor_install --prefix ~/harvester/
-. ~/harvester/condor.sh
 CHOST=`hostname -s`
 CLOCAL=~/harvester/local.$CHOST/condor_config.local
 echo cp ~/git/autopyfactory-harvester/configs/jrh-condor_config.local $CLOCAL
 cp ~/git/autopyfactory-harvester/configs/jrh-condor_config.local $CLOCAL
-condor_config_val -config
+. $VIRTUAL_ENV/condor.sh
+condor_config_val -config 
 condor_master
 
-cd ~/harvester
+cd $VIRTUAL_ENV
 
 # Install Harvester
 echo pip install pip --upgrade
@@ -70,6 +75,7 @@ cp ~/git/autopyfactory-harvester/configs/jrh-panda_queueconfig.json etc/panda/pa
 echo cp ~/git/autopyfactory-harvester/configs/jrh-agisdefaults.conf etc/autopyfactory/agisdefaults.conf
 cp ~/git/autopyfactory-harvester/configs/jrh-agisdefaults.conf etc/autopyfactory/agisdefaults.conf
 
+# Dirs and housekeeping.
 chmod +x etc/rc.d/init.d/panda_harvester
 mkdir -p log  
 mkdir -p var/log/panda/
@@ -77,10 +83,14 @@ mkdir -p var/harvester
 mkdir -p var/run
 mkdir -p tmp
 
+# Environment
 echo PATH=$PATH
 echo PYTHONPATH=$PYTHONPATH
 echo PANDA_HOME=$PANDA_HOME
+export PYTHONPATH=$PYTHONPATH:$VIRTUAL_ENV/lib/python:$VIRTUAL_ENV/lib/python2.7
 
+
+# Proxy stuff
 echo "cd etc ; wget -nc https://gitlab.cern.ch/plove/rucio/raw/7121c7200257a4c537b56ce6e7e438f0b35c6e48/etc/web/CERN-bundle.pem ; cd ../"
 cd etc ; wget -nc https://gitlab.cern.ch/plove/rucio/raw/7121c7200257a4c537b56ce6e7e438f0b35c6e48/etc/web/CERN-bundle.pem ; cd ../
 
