@@ -8,6 +8,22 @@ echo cd harvester
 cd harvester
 echo . bin/activate
 . bin/activate
+
+# Install, run personal condor
+mkdir tmp ; cd tmp
+wget http://dev.racf.bnl.gov/dist/condor/condor-8.6.3-x86_64_RedHat7-stripped.tar.gz
+tar -xvzf condor-8.6.3-x86_64_RedHat7-stripped.tar.gz
+cd condor-8.6.3-x86_64_RedHat7-stripped
+./condor_install --prefix ~/harvester/
+. ~/harvester/condor.sh
+CHOST=`hostname -s`
+CLOCAL=~/harvester/local.$CHOST/condor_config.local
+echo cp ~/git/autopyfactory-harvester/configs/jrh-condor_config.local $CLOCAL
+cp ~/git/autopyfactory-harvester/configs/jrh-condor_config.local $CLOCAL
+condor_config_val -config
+condor_master
+
+# Install Harvester
 echo pip install pip --upgrade
 pip install pip --upgrade
 echo pip install python-daemon
@@ -18,7 +34,6 @@ echo pip install git+git://github.com/PanDAWMS/panda-common.git@setuptools
 pip install git+git://github.com/PanDAWMS/panda-common.git@setuptools --upgrade
 #echo pip install git+git://github.com/PanDAWMS/panda-harvester.git
 #pip install git+git://github.com/PanDAWMS/panda-harvester.git --upgrade
-
 echo pip install git+git/github.com/bnl-sdcc/panda-harvester  --upgrade
 pip install git+git://github.com/bnl-sdcc/panda-harvester  --upgrade
 sleep 2
@@ -35,7 +50,7 @@ echo cp ~/git/autopyfactory-harvester/configs/jrh-panda_queueconfig.json etc/pan
 cp ~/git/autopyfactory-harvester/configs/jrh-panda_queueconfig.json etc/panda/panda_queueconfig.json
 
 echo cp ~/git/autopyfactory-harvester/configs/jrh-agisdefaults.conf etc/autopyfactory/agisdefaults.conf
-echo cp ~/git/autopyfactory-harvester/configs/jrh-agisdefaults.conf etc/autopyfactory/agisdefaults.conf
+cp ~/git/autopyfactory-harvester/configs/jrh-agisdefaults.conf etc/autopyfactory/agisdefaults.conf
 
 chmod +x etc/rc.d/init.d/panda_harvester
 mkdir -p log  
