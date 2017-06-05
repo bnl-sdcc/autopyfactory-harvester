@@ -84,10 +84,11 @@ mkdir -p var/run
 mkdir -p tmp
 
 # Environment
+export PYTHONPATH=$PYTHONPATH:$VIRTUAL_ENV/lib/python:$VIRTUAL_ENV/lib/python2.7
 echo PATH=$PATH
 echo PYTHONPATH=$PYTHONPATH
 echo PANDA_HOME=$PANDA_HOME
-export PYTHONPATH=$PYTHONPATH:$VIRTUAL_ENV/lib/python:$VIRTUAL_ENV/lib/python2.7
+
 
 
 # Proxy stuff
