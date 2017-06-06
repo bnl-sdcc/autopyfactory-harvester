@@ -80,6 +80,7 @@ chmod +x etc/rc.d/init.d/panda_harvester
 mkdir -p log  
 mkdir -p var/log/panda/
 mkdir -p var/harvester
+mkdir -p var/factory/logs
 mkdir -p var/run
 mkdir -p tmp
 

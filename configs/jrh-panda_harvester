@@ -10,3 +10,4 @@ export PYTHONPATH=$VIRTUAL_ENV/lib/python:$VIRTUAL_ENV/lib/python2.7/site-packag
 
 # handle condor
 export CONDOR_CONFIG=$VIRTUAL_ENV/etc/condor_config
+
