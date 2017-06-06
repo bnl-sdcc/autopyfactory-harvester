@@ -84,12 +84,9 @@ mkdir -p var/run
 mkdir -p tmp
 
 # Environment
-export PYTHONPATH=$PYTHONPATH:$VIRTUAL_ENV/lib/python:$VIRTUAL_ENV/lib/python2.7
 echo PATH=$PATH
 echo PYTHONPATH=$PYTHONPATH
 echo PANDA_HOME=$PANDA_HOME
-
-
 
 # Proxy stuff
 echo "cd etc ; wget -nc https://gitlab.cern.ch/plove/rucio/raw/7121c7200257a4c537b56ce6e7e438f0b35c6e48/etc/web/CERN-bundle.pem ; cd ../"
