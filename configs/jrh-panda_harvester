@@ -6,4 +6,4 @@ export TZ=UTC
 
 # import panda modules
 export SITE_PACKAGES_PATH=$VIRTUAL_ENV/lib/python2.7/site-packages
-export PYTHONPATH=$VIRTUAL_ENV/lib/python2.7/site-packages/pandacommon:$VIRTUAL_ENV/lib/python2.7/site-packages
+export PYTHONPATH=$VIRTUAL_ENV/lib/python:$VIRTUAL_ENV/lib/python2.7/site-packages/pandacommon:$VIRTUAL_ENV/lib/python2.7/site-packages
