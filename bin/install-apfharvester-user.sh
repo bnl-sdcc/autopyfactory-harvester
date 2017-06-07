@@ -57,6 +57,15 @@ echo pip install git+git/github.com/bnl-sdcc/panda-harvester  --upgrade
 pip install git+git://github.com/bnl-sdcc/panda-harvester  --upgrade
 sleep 2
 
+# Dirs
+mkdir -p log
+mkdir -p libexec  
+mkdir -p var/log/panda/
+mkdir -p var/harvester
+mkdir -p var/factory/logs
+mkdir -p var/run
+mkdir -p tmp
+
 echo cp ~/git/autopyfactory-harvester/configs/jrh-panda_harvester.init etc/rc.d/init.d/panda_harvester
 cp ~/git/autopyfactory-harvester/configs/jrh-panda_harvester.init etc/rc.d/init.d/panda_harvester
 
@@ -75,14 +84,12 @@ cp ~/git/autopyfactory-harvester/configs/jrh-panda_queueconfig.json etc/panda/pa
 echo cp ~/git/autopyfactory-harvester/configs/jrh-agisdefaults.conf etc/autopyfactory/agisdefaults.conf
 cp ~/git/autopyfactory-harvester/configs/jrh-agisdefaults.conf etc/autopyfactory/agisdefaults.conf
 
-# Dirs and housekeeping.
+echo cp ~/git/autopyfactory-harvester/libexec/wrapper* libexec/
+cp ~/git/autopyfactory-harvester/libexec/wrapper* libexec/
+
+# Houseousekeeping.
 chmod +x etc/rc.d/init.d/panda_harvester
-mkdir -p log  
-mkdir -p var/log/panda/
-mkdir -p var/harvester
-mkdir -p var/factory/logs
-mkdir -p var/run
-mkdir -p tmp
+chmod +x libexec/wrapper*
 
 # Environment
 echo PATH=$PATH
