@@ -84,6 +84,9 @@ cp ~/git/autopyfactory-harvester/configs/jrh-panda_queueconfig.json etc/panda/pa
 echo cp ~/git/autopyfactory-harvester/configs/jrh-agisdefaults.conf etc/autopyfactory/agisdefaults.conf
 cp ~/git/autopyfactory-harvester/configs/jrh-agisdefaults.conf etc/autopyfactory/agisdefaults.conf
 
+echo cp ~/git/autopyfactory-harvester/configs/jrh-autopyfactory.conf etc/autopyfactory/autopyfactory.conf
+cp ~/git/autopyfactory-harvester/configs/jrh-autopyfactory.conf etc/autopyfactory/autopyfactory.conf
+
 echo cp ~/git/autopyfactory-harvester/libexec/wrapper* libexec/
 cp ~/git/autopyfactory-harvester/libexec/wrapper* libexec/
 
