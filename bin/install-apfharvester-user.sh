@@ -98,4 +98,5 @@ voms-proxy-init -voms atlas:/atlas/usatlas/Role=production -out /tmp/harvesterpr
 
 echo Starting init script...
 etc/rc.d/init.d/panda_harvester start
+cd
 
