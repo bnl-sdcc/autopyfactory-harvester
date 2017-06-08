@@ -103,8 +103,8 @@ echo PANDA_HOME=$PANDA_HOME
 echo "cd etc ; wget -nc https://gitlab.cern.ch/plove/rucio/raw/7121c7200257a4c537b56ce6e7e438f0b35c6e48/etc/web/CERN-bundle.pem ; cd ../"
 cd etc ; wget -nc https://gitlab.cern.ch/plove/rucio/raw/7121c7200257a4c537b56ce6e7e438f0b35c6e48/etc/web/CERN-bundle.pem ; cd ../
 
-echo voms-proxy-init -voms atlas:/atlas/usatlas/Role=production
-voms-proxy-init -voms atlas:/atlas/usatlas/Role=production -out /tmp/harvesterproxy
+echo voms-proxy-init -valid 96:00 -voms atlas:/atlas/usatlas/Role=production
+voms-proxy-init -valid 96:00 -voms atlas:/atlas/usatlas/Role=production -out /tmp/harvesterproxy
 
 echo Starting init script...
 etc/rc.d/init.d/panda_harvester start
