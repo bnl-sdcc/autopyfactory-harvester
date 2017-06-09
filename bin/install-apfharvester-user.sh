@@ -87,6 +87,9 @@ cp ~/git/autopyfactory-harvester/configs/jrh-agisdefaults.conf etc/autopyfactory
 echo cp ~/git/autopyfactory-harvester/configs/jrh-autopyfactory.conf etc/autopyfactory/autopyfactory.conf
 cp ~/git/autopyfactory-harvester/configs/jrh-autopyfactory.conf etc/autopyfactory/autopyfactory.conf
 
+echo cp ~/git/autopyfactory-harvester/configs/jrh-auth.conf etc/autopyfactory/auth.conf
+cp ~/git/autopyfactory-harvester/configs/jrh-auth.conf etc/autopyfactory/auth.conf
+
 echo cp ~/git/autopyfactory-harvester/libexec/wrapper* libexec/
 cp ~/git/autopyfactory-harvester/libexec/wrapper* libexec/
 
