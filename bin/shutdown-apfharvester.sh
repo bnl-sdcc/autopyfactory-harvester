@@ -22,3 +22,4 @@ sleep 10
 
 echo condor_off -master
 condor_off -master
+sleep 5
