@@ -49,9 +49,11 @@ pip install git+git://github.com/PanDAWMS/panda-common.git@setuptools --upgrade
 #echo pip install git+git://github.com/PanDAWMS/panda-harvester.git
 #pip install git+git://github.com/PanDAWMS/panda-harvester.git --upgrade
 
-
 echo pip install git+git://github.com/PanDAWMS/autopyfactory.git --upgrade
 pip install git+git://github.com/PanDAWMS/autopyfactory.git --upgrade
+
+echo pip install git+git://github.com/bnl-sdcc/sdcc-pluginmanager.git --upgrade
+pip install git+git://github.com/bnl-sdcc/sdcc-pluginmanager.git --upgrade
 
 echo pip install git+git/github.com/bnl-sdcc/panda-harvester  --upgrade
 pip install git+git://github.com/bnl-sdcc/panda-harvester  --upgrade
