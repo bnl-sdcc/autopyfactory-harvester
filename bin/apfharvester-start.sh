@@ -8,8 +8,8 @@ echo . ./bin/activate
 echo . condor.sh
 . condor.sh
 
-echo condor_off -master
-condor_off -master
+echo condor_master
+condor_master
 sleep 5
 
 echo . etc/sysconfig/panda_harvester
