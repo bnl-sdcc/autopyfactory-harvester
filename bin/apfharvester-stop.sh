@@ -17,8 +17,8 @@ echo ./etc/rc.d/init.d/panda_harvester stop
 echo condor_rm -all
 condor_rm -all
 
-echo sleep 10
-sleep 10
+echo sleep 5
+sleep 5
 
 echo condor_off -master
 condor_off -master
