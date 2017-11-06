@@ -101,6 +101,7 @@ cp ~/git/autopyfactory-harvester/libexec/wrapper* libexec/
 # Houseousekeeping.
 chmod +x etc/rc.d/init.d/panda_harvester
 chmod +x libexec/wrapper*
+ln -s ~/harvester/etc/rc.d/init.d/panda_harvester ~/harvester/etc/init.d
 
 # Environment
 echo PATH=$PATH
