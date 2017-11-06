@@ -52,6 +52,9 @@ pip install git+git://github.com/PanDAWMS/panda-common.git@setuptools --upgrade
 echo pip install git+git://github.com/PanDAWMS/autopyfactory.git --upgrade
 pip install git+git://github.com/PanDAWMS/autopyfactory.git --upgrade
 
+echo pip install git+git://github.com/PanDAWMS/autopyfactory-tools.git --upgrade
+pip install git+git://github.com/PanDAWMS/autopyfactory-tools.git --upgrade
+
 echo pip install git+git://github.com/bnl-sdcc/sdcc-pluginmanager.git --upgrade
 pip install git+git://github.com/bnl-sdcc/sdcc-pluginmanager.git --upgrade
 
