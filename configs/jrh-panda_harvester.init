@@ -17,7 +17,7 @@ ARGV="$@"
 #
 # setup python and virtual env
 # load module python
-VIRTUAL_ENV=/home/jhover/harvester
+VIRTUAL_ENV=/home/harvester/harvester
 . ${VIRTUAL_ENV}/bin/activate
 
 # Source harvester env variables
