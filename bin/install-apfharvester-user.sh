@@ -102,6 +102,7 @@ cp ~/git/autopyfactory-harvester/libexec/wrapper* libexec/
 chmod +x etc/rc.d/init.d/panda_harvester
 chmod +x libexec/wrapper*
 ln -s ~/harvester/etc/rc.d/init.d/panda_harvester ~/harvester/etc/init.d
+echo "export CONDOR_CONFIG_VAL=$HOME/harvester/bin/condor_config_val" >> ~/harvester/condor.sh
 
 # Environment
 echo PATH=$PATH
