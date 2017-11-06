@@ -8,8 +8,8 @@
 
 echo Uninstalling Harvester. 
 
-echo ~/bin/shutdown-apfharvester.sh
-~/bin/shutdown-apfharvester.sh
+echo ~/git/autopyfactory-harvesteer/bin/shutdown-apfharvester.sh
+~/git/autopyfactory-harvesteer/bin/shutdown-apfharvester.sh
 
 sleep 5
 
