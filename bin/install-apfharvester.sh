@@ -7,6 +7,8 @@
 # John Hover <jhover@bnl.gov>
 #
 
+set -xe 
+
 cd ~/
 echo virtualenv harvester
 virtualenv harvester
