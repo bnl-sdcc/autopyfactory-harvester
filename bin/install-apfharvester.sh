@@ -100,13 +100,14 @@ cp ~/git/autopyfactory-harvester/configs/jrh-auth.conf etc/autopyfactory/auth.co
 echo cp ~/git/autopyfactory-harvester/libexec/wrapper* libexec/
 cp ~/git/autopyfactory-harvester/libexec/wrapper* libexec/
 
-echo cp ~/git/autopyfactory-harvester/shutdown-apfharvester.sh bin/
-cp ~/git/autopyfactory-harvester/shutdown-apfharvester.sh bin/
+echo cp ~/git/autopyfactory-harvester/bin/apfharvester-stop.sh bin/
+cp ~/git/autopyfactory-harvester/bin/apfharvester-stop.sh bin/
 
 
 # Housekeeping.
 chmod +x etc/rc.d/init.d/panda_harvester
 chmod +x libexec/wrapper*
+chmod +x bin/*
 ln -s ~/harvester/etc/rc.d/init.d/panda_harvester ~/harvester/etc/init.d
 echo "export CONDOR_CONFIG_VAL=$HOME/harvester/bin/condor_config_val" >> ~/harvester/condor.sh
 
