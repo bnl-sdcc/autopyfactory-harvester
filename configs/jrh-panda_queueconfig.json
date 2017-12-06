@@ -32,6 +32,10 @@
         "monitor": {
                 "name": "APFGridMonitor",
                 "module": "pandaharvester.harvestermonitor.apfgrid_monitor"
+        },
+                "sweeper": {
+                "name": "APFGridSweeper",
+                "module": "pandaharvester.harvestersweeper.apfgrid_sweeper"
         }
     }
 }
