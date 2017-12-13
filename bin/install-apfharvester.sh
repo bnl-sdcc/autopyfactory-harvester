@@ -21,7 +21,8 @@ echo . bin/activate
 
 # Handle host-by-host config, bail if none. 
 HHOST=`hostname -s`
-if [ ! -d "~/git/autopyfactory-harvester/configs/$HHOST" ]; then
+
+if [ ! -d ~/git/autopyfactory-harvester/configs/$HHOST ]; then
   echo "No configuration directory for this host: $HHOST. Exitting."
   exit 1
 fi
