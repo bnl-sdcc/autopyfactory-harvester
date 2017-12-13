@@ -29,7 +29,7 @@ fi
 
 
 # Install, run personal condor
-mkdir tmp ; cd tmp
+mkdir -p tmp ; cd tmp
 wget http://dev.racf.bnl.gov/dist/condor/condor-8.6.3-x86_64_RedHat7-stripped.tar.gz
 tar -xvzf condor-8.6.3-x86_64_RedHat7-stripped.tar.gz
 cd condor-8.6.3-x86_64_RedHat7-stripped
