@@ -19,6 +19,14 @@ cd harvester
 echo . bin/activate
 . bin/activate
 
+# Handle host-by-host config, bail if none. 
+HHOST=`hostname -s`
+if [ ! -d "~/git/autopyfactory-harvester/configs/$HHOST" ]; then
+  echo "No configuration directory for this host: $HHOST. Exitting."
+  exit 1
+fi
+
+
 # Install, run personal condor
 mkdir tmp ; cd tmp
 wget http://dev.racf.bnl.gov/dist/condor/condor-8.6.3-x86_64_RedHat7-stripped.tar.gz
@@ -27,8 +35,8 @@ cd condor-8.6.3-x86_64_RedHat7-stripped
 ./condor_install --prefix ~/harvester/
 CHOST=`hostname -s`
 CLOCAL=~/harvester/local.$CHOST/condor_config.local
-echo cp ~/git/autopyfactory-harvester/configs/jrh-condor_config.local $CLOCAL
-cp ~/git/autopyfactory-harvester/configs/jrh-condor_config.local $CLOCAL
+echo cp ~/git/autopyfactory-harvester/configs/$HHOST/condor_config.local $CLOCAL
+cp ~/git/autopyfactory-harvester/configs/$HHOST/condor_config.local $CLOCAL
 . $VIRTUAL_ENV/condor.sh
 condor_config_val -config 
 condor_master
@@ -51,8 +59,8 @@ pip install git+git://github.com/PanDAWMS/panda-common.git@setuptools --upgrade
 #echo pip install git+git://github.com/PanDAWMS/panda-harvester.git
 #pip install git+git://github.com/PanDAWMS/panda-harvester.git --upgrade
 
-echo pip install git+git://github.com/PanDAWMS/autopyfactory.git --upgrade
-pip install git+git://github.com/PanDAWMS/autopyfactory.git --upgrade
+echo pip install git+git://github.com/PanDAWMS/autopyfactory.git@feat/embedded-library-refactor --upgrade
+pip install git+git://github.com/PanDAWMS/autopyfactory.git@feat/embedded-library-refactor --upgrade
 
 echo pip install git+git://github.com/PanDAWMS/autopyfactory-tools.git --upgrade
 pip install git+git://github.com/PanDAWMS/autopyfactory-tools.git --upgrade
@@ -73,29 +81,29 @@ mkdir -p var/factory/logs
 mkdir -p var/run
 mkdir -p tmp
 
-echo cp ~/git/autopyfactory-harvester/configs/jrh-panda_harvester.init etc/rc.d/init.d/panda_harvester
-cp ~/git/autopyfactory-harvester/configs/jrh-panda_harvester.init etc/rc.d/init.d/panda_harvester
+echo cp ~/git/autopyfactory-harvester/configs/$HHOST/panda_harvester.init etc/rc.d/init.d/panda_harvester
+cp ~/git/autopyfactory-harvester/configs/$HHOST/panda_harvester.init etc/rc.d/init.d/panda_harvester
 
-echo cp ~/git/autopyfactory-harvester/configs/jrh-panda_common.cfg etc/panda/panda_common.cfg
-cp ~/git/autopyfactory-harvester/configs/jrh-panda_common.cfg etc/panda/panda_common.cfg
+echo cp ~/git/autopyfactory-harvester/configs/$HHOST/panda_common.cfg etc/panda/panda_common.cfg
+cp ~/git/autopyfactory-harvester/configs/$HHOST/panda_common.cfg etc/panda/panda_common.cfg
 
-echo cp ~/git/autopyfactory-harvester/configs/jrh-panda_harvester etc/sysconfig/panda_harvester
-cp ~/git/autopyfactory-harvester/configs/jrh-panda_harvester etc/sysconfig/panda_harvester
+echo cp ~/git/autopyfactory-harvester/configs/$HHOST/panda_harvester etc/sysconfig/panda_harvester
+cp ~/git/autopyfactory-harvester/configs/$HHOST/panda_harvester etc/sysconfig/panda_harvester
 
-echo cp~/git/autopyfactory-harvester/configs/jrh-panda_harvester.cfg  etc/panda/panda_harvester.cfg
-cp ~/git/autopyfactory-harvester/configs/jrh-panda_harvester.cfg  etc/panda/panda_harvester.cfg
+echo cp~/git/autopyfactory-harvester/configs/$HHOST/panda_harvester.cfg  etc/panda/panda_harvester.cfg
+cp ~/git/autopyfactory-harvester/configs/$HHOST/panda_harvester.cfg  etc/panda/panda_harvester.cfg
 
-echo cp ~/git/autopyfactory-harvester/configs/jrh-panda_queueconfig.json etc/panda/panda_queueconfig.json
-cp ~/git/autopyfactory-harvester/configs/jrh-panda_queueconfig.json etc/panda/panda_queueconfig.json
+echo cp ~/git/autopyfactory-harvester/configs/$HHOST/panda_queueconfig.json etc/panda/panda_queueconfig.json
+cp ~/git/autopyfactory-harvester/configs/$HHOST/panda_queueconfig.json etc/panda/panda_queueconfig.json
 
-echo cp ~/git/autopyfactory-harvester/configs/jrh-agisdefaults.conf etc/autopyfactory/agisdefaults.conf
-cp ~/git/autopyfactory-harvester/configs/jrh-agisdefaults.conf etc/autopyfactory/agisdefaults.conf
+echo cp ~/git/autopyfactory-harvester/configs/$HHOST/agisdefaults.conf etc/autopyfactory/agisdefaults.conf
+cp ~/git/autopyfactory-harvester/configs/$HHOST/agisdefaults.conf etc/autopyfactory/agisdefaults.conf
 
-echo cp ~/git/autopyfactory-harvester/configs/jrh-autopyfactory.conf etc/autopyfactory/autopyfactory.conf
-cp ~/git/autopyfactory-harvester/configs/jrh-autopyfactory.conf etc/autopyfactory/autopyfactory.conf
+echo cp ~/git/autopyfactory-harvester/configs/$HHOST/autopyfactory.conf etc/autopyfactory/autopyfactory.conf
+cp ~/git/autopyfactory-harvester/configs/$HHOST/autopyfactory.conf etc/autopyfactory/autopyfactory.conf
 
-echo cp ~/git/autopyfactory-harvester/configs/jrh-auth.conf etc/autopyfactory/auth.conf
-cp ~/git/autopyfactory-harvester/configs/jrh-auth.conf etc/autopyfactory/auth.conf
+echo cp ~/git/autopyfactory-harvester/configs/$HHOST/auth.conf etc/autopyfactory/auth.conf
+cp ~/git/autopyfactory-harvester/configs/$HHOST/auth.conf etc/autopyfactory/auth.conf
 
 echo cp ~/git/autopyfactory-harvester/libexec/wrapper* libexec/
 cp ~/git/autopyfactory-harvester/libexec/wrapper* libexec/
